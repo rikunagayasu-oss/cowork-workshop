@@ -530,6 +530,103 @@ blockquote {
   line-height: 1.7;
 }
 
+/* ===== Build Story (Anthropic Episode) ===== */
+.build-story {
+  background: #FFF8F0;
+  border: 2px solid #E6A55A;
+  border-radius: 12px;
+  padding: 28px 24px;
+  margin: 40px 0;
+}
+.build-story-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.build-story-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: #E65100;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.build-story-icon svg {
+  width: 26px;
+  height: 26px;
+  stroke: #fff;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.build-story-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #BF5B00;
+  margin-bottom: 4px;
+}
+.build-story-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1B2A4A;
+}
+.build-story-lead {
+  font-size: 15px;
+  color: #3A4A60;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.stat-card {
+  background: #fff;
+  border: 1px solid #E6D5BE;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+.stat-number {
+  font-size: 32px;
+  font-weight: 800;
+  color: #BF5B00;
+  line-height: 1.2;
+}
+.stat-unit {
+  font-size: 13px;
+  font-weight: 600;
+  color: #8A6B40;
+  margin-bottom: 8px;
+}
+.stat-desc {
+  font-size: 13px;
+  color: #5A6B8A;
+  line-height: 1.5;
+}
+.build-story-note {
+  font-size: 14px;
+  color: #6B7A96;
+  background: rgba(255,255,255,.6);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+.build-story-source {
+  font-size: 12px;
+  color: #8A96A8;
+  font-style: italic;
+}
+
 @media (max-width: 600px) {
   .model-cards { grid-template-columns: 1fr; }
   .interface-map { grid-template-columns: 1fr; }
@@ -537,6 +634,8 @@ blockquote {
   .feature-grid { grid-template-columns: 1fr; }
   .showcase-box { flex-direction: column; }
   .hero h1 { font-size: 22px; }
+  .stat-cards { grid-template-columns: 1fr; }
+  .build-story-header { flex-direction: column; text-align: center; }
 }
 </style>
 </head>
@@ -695,6 +794,41 @@ blockquote {
     <div class="concept-title">チャットとCoworkの決定的な違い</div>
     <div class="concept-body">チャット型Claudeは「会話の中で答えを返す」のが得意。Coworkは「成果物ファイルを手元に返す」のが得意。今日のワークショップでは、この「ファイルが手元に返ってくる」体験にフォーカスします。</div>
   </div>
+</div>
+
+<!-- ============================================================ -->
+<!--  Build Story: Anthropic Episode                               -->
+<!-- ============================================================ -->
+<div class="build-story">
+  <div class="build-story-header">
+    <div class="build-story-icon">
+      <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+    </div>
+    <div>
+      <div class="build-story-label">THE STORY BEHIND COWORK</div>
+      <div class="build-story-title">Claude CodeがCoworkを作った</div>
+    </div>
+  </div>
+  <div class="build-story-lead">今日使うCowork自体が、Claude Code（エンジニア向けCLI）で構築されました。そのプロセスを紹介します。</div>
+  <div class="stat-cards">
+    <div class="stat-card">
+      <div class="stat-number">~10</div>
+      <div class="stat-unit">日間</div>
+      <div class="stat-desc">構築期間</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">3-8</div>
+      <div class="stat-unit">並列インスタンス</div>
+      <div class="stat-desc">開発者各自がClaude Codeを並列稼働</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">100%</div>
+      <div class="stat-unit">AI記述</div>
+      <div class="stat-desc">人間は方針決定+設計+レビュー</div>
+    </div>
+  </div>
+  <div class="build-story-note">既存コンポーネント（Claude Agent SDK等）を再利用して構築。ゼロからではなく「レゴブロックの組み立て」。</div>
+  <div class="build-story-source">出典: Felix Rieseberg (Anthropic), Latent Space Podcast</div>
 </div>
 
 <!-- ============================================================ -->
@@ -938,12 +1072,9 @@ CSS・JSはすべてHTML内にインラインで記述してください。
     <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
   </div>
   <div class="showcase-content">
-    <div class="showcase-label">MADE WITH CLAUDE CODE</div>
+    <div class="showcase-label">MADE WITH COWORK + CLAUDE CODE</div>
     <div class="showcase-title">この教材自体がAIで作られています</div>
-    <div class="showcase-body">
-      <p style="margin-bottom: 10px;">このワークショップの教材・配布資料は、<strong>Cowork + Claude Code</strong>を活用して<strong>空き時間2日</strong>で作りました。「AIに任せる」は特別なことではなく、今日この場で皆さんが体験していることの延長線上にあります。</p>
-      <p style="margin-bottom: 0; font-size: 13px; color: #6B7A96;">ちなみに、今日紹介しているCowork自体も、AnthropicがClaude Codeを使って<strong>約10日</strong>で構築したものです（小規模チーム、既存部品を再利用、開発者各自がClaude Codeを3〜8個並列稼働）。<br><span style="font-size: 12px;">出典: Felix Rieseberg, Latent Space Podcast</span></p>
-    </div>
+    <div class="showcase-body">このワークショップの教材・配布資料は、<strong>Cowork＋Claude Code</strong>を使って<strong>空き時間2日</strong>で制作しました。「AIに任せる」は特別なことではなく、今日この場で皆さんが体験していることの延長線上にあります。</div>
   </div>
 </div>
 
